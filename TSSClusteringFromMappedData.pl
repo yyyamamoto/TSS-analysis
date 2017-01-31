@@ -99,7 +99,7 @@ else {
 
 print "first chop & u/d/e labeling done\n";
 
-#mark P1 at $p0_table[][13], ud >> P1
+#mark P1 at $p0_table[][7], ud >> P1
 for ($k = 0; $k < $p0tablesize - 1; $k++){
     if ($p0_table[$k][6] eq "u" && $p0_table[$k + 1][6] eq "d"){
         $p0_table[$k][7] ="P1";
@@ -107,7 +107,7 @@ for ($k = 0; $k < $p0tablesize - 1; $k++){
 }
 
 
-#mark $p0_table[][12] with s
+#mark $p0_table[][6] with s
 for ($j = 0; $j < $p0tablesize -1; $j++){
     if ($p0_table[$j][4] ne $p0_table[$j + 1][4]){
         $p0_table[$j + 1][6] = "s";
@@ -188,20 +188,20 @@ for ($i = 0;$i < $p1tablesize - 1; $i++){
         $p1_table[$i + 1][6] = "e";
     }
 }
-#mark P2 一回目
+#mark P2 1st time
 for ($i = 0; $i < $p1tablesize -1; $i++){#single peak, ud >> P2
     if ($p1_table[$i][6] eq "u" && $p1_table[$i + 1][6] eq "d"){
         $p0serialtemp = $p1_table[$i][5];
         $p0_table[$p0serialtemp][9] = "P2";
     }
 }
-#mark s at $p1_table[][12]
+#mark s at $p1_table[][6]
 for ($i = 0; $i < $p1tablesize; $i++){
     if ($p1_table[$i][4] ne $p1_table[$i + 1][4]){
         $p1_table[$i + 1][6] = "s";
     }
 }
-$p1_table[0][6] = "s"; #例外処理
+$p1_table[0][6] = "s"; #treat exceptions
 
 #mark P2 at sd & us
 for ($i1 = 0; $i1 < $p1tablesize; $i1++){
@@ -236,15 +236,15 @@ while ($j1 < $p1tablesize){
             $j2++;
         }# $j2 = length of "e"
         if ($p1_table[$j1 - 1][6] eq "d"){#deee
-            #何もしない
+            #nothing done
         }
         elsif ($p1_table[$j1 + $j2][6] eq "u"){# eeeu
-            #何もしない
+            #nothing done
         }
         elsif ($p1_table[$j1 - 1][6] eq "s" or $p1_table[$j1 - 1][6] eq "u"){# s/u_eee
             if ($p1_table[$j1 + $j2][6] eq "d" or $p1_table[$j1 + $j2][6] eq "s"){# s/u_eee  s/d
                 $mid = 0;
-                $mid = $j1 - 1 + int ($j2 / 2);# $j2が奇数なら真ん中、偶数なら真ん中二つの北側
+                $mid = $j1 - 1 + int ($j2 / 2);# middle if $j2 is odd, two-north of the middle if even
                 $p0serialtemp = $p1_table[$mid][5];
                 $p0_table[$p0serialtemp][9] = "P2";
             }
@@ -283,10 +283,10 @@ $p2tablesize = $p2serialtemp;
 for ($p2 = 0; $p2 < $p2tablesize - 1; $p2++){
     if ($p2_table[$p2][4] eq $p2_table[$p2 + 1][4]){ #same cluster
         $p1n = $p2_table[$p2][8]; $p1s = $p2_table[$p2 + 1][8];
-        $p1first_u = 0; $p1last_d = 0; $p1cn = 0; $p1cs = 0;#初期化、スコープを意識
+        $p1first_u = 0; $p1last_d = 0; $p1cn = 0; $p1cs = 0;#initialize,
         if ($p2_table[$p2 + 1][1] - $p2_table[$p2][1] > $gapdistance2){ # distance between P2 peaks
             print "cut at P2_$p2\n";
-            #作り直し　$p1_table[][12]のs/u/d/eを見て谷を決める。
+            #remake, determine valley after examination of $p1_table[][12]のs/u/d/e.
             # set $p0last_d & $p0first_u
             for ($p1v = $p1n; $p1v < $p1s + 1; $p1v++){
                 if ($p1_table[$p1v][6] eq "d"){
@@ -346,7 +346,7 @@ for ($i = 0; $i < $p2tablesize; $i++){#clear p2_table[][]
     @{$p2_table[$i]} = "";
 }
 $p2serialtemp = 0;
-for ($i = 0; $i < $p0tablesize; $i++){#clusterID変わったのでp2_table[][]作り直し
+for ($i = 0; $i < $p0tablesize; $i++){#remake p2_table[][] after modification of clusterID.
     if ($p0_table[$i][9] eq "P2"){
         $p2_table[$p2serialtemp][0] = $p0_table[$i][0]; $p2_table[$p2serialtemp][1] = $p0_table[$i][1]; $p2_table[$p2serialtemp][2] = $p0_table[$i][2]; $p2_table[$p2serialtemp][3] = $p0_table[$i][3]; $p2_table[$p2serialtemp][4] = $p0_table[$i][4]; $p2_table[$p2serialtemp][5] = $p0_table[$i][5]; $p2_table[$p2serialtemp][6] = $p0_table[$i][6]; $p2_table[$p2serialtemp][7] = $p0_table[$i][7]; $p2_table[$p2serialtemp][8] = $p0_table[$i][8]; $p2_table[$p2serialtemp][9] = $p0_table[$i][9]; $p2_table[$p2serialtemp][10] = $p0_table[$i][10]; $p2_table[$p2serialtemp][11] = $p0_table[$i][11];
         $p2serialtemp++;
