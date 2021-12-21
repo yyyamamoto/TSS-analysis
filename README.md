@@ -13,7 +13,7 @@ TSSClusteringFromMappedData.pl
   rule 1: cut if distance is eq or more than 20 bp (=$gapdistance1)
   rule 2: cut if distance between secondary peaks is eq or more than 100 bp (=$gapdistance2)
   cutting site: bottom of P1 peaks, longest space among TSS in the bottom
-  ref: Tokizawa M, Kusunoki K, Koyama H, Kurotani A, Sakurai T, Suzuki Y, Kurata T, Yamamoto YY. "Identification of Arabidopsis genic and non-genic promoters by pair-end sequencing of TSS tags". Plant J, 2017.
+  ref: Tokizawa M, Kusunoki K, Koyama H, Kurotani A, Sakurai T, Suzuki Y, Kurata T, Yamamoto YY. "Identification of Arabidopsis genic and non-genic promoters by pair-end sequencing of TSS tags". Plant J, 89: 671-681, 2017.
 
   argument 1: input file name
   input file: mapped TSS data (tab delimited table)
