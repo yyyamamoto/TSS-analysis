@@ -1,6 +1,6 @@
 TSS-analysis.  
 clustering TSS tags in genomics.  
-TSS-seq data are mapped into a genome, simlified form tag read to pin-point TSS, clusterd. From clustered data, peak position, positions of both edges, and tag number of the cluster are to be identified.
+TSS-seq data are mapped into a genome, simlified form tag read to position of the tags, and grouped into TSS clusters with a width around tens of bps. From clustered data, peak position, positions of both edges, and tag number of the cluster are to be identified.
 
 TSSClusteringFromMappedData.pl
 
