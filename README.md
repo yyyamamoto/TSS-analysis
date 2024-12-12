@@ -7,7 +7,7 @@ TSSClusteringFromMappedData.pl
 
   2017.01.31
   Yoshiharu Y. Yamamoto, Faculty of Applied Biological Sciences, Gifu University
-  yyy@gifu-u.ac.jp
+  yyy@gifu-u.ac.jp >> yamamoto.yoshiharu.h5@f.gifu-u.ac.jp (2024.12.13)
   Solexa TSS analysis
   Preparation of TSS clusers from mapped data
   rule 1: cut if distance is eq or more than 20 bp (=$gapdistance1)
@@ -37,3 +37,9 @@ TSSClusteringFromMappedData.pl
   10th column: P2 peak mark
   11th column: P2 serial number
   12th column: CP peak mark (=cluster peak)
+
+2024.12.13
+Yoshiharu Y. Yamamoto, yamamoto.yoshiharu.h5@f.gifu-u.ac.jp
+new script uploaded: TSSClusteringFromMappedData_1_2024.pl
+A bug of no marking of new Cluster Peak after final cutting of a long cluster, is fixed.
+Used in our recent report: "Genetic stability of genic and non-genic promoters identified by comparative TSS-seq of Arabidopsis natural variations", Sugekawa K, Ezeh OS, Yamamoto YY (manuscript in preparation)
