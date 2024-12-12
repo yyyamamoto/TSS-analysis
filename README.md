@@ -43,3 +43,6 @@ Yoshiharu Y. Yamamoto, yamamoto.yoshiharu.h5@f.gifu-u.ac.jp
 new script uploaded: TSSClusteringFromMappedData_1_2024.pl
 A bug of no marking of new Cluster Peak after final cutting of a long cluster, is fixed.
 Used in our recent report: "Genetic stability of genic and non-genic promoters identified by comparative TSS-seq of Arabidopsis natural variations", Sugekawa K, Ezeh OS, Yamamoto YY (manuscript in preparation)
+new script uploaded: TSSClusteringFromMappedData_2_prepClusterTable2018.pl
+Apply this to the output file from TSSClusteringFromMappedData_1_2024.pl
+
