@@ -9,6 +9,7 @@
 #  rule 2: cut if distance between secondary peaks is eq or more than 100 bp (=$gapdistance2)
 #  cutting site: bottom of P1 peaks, longest space among TSS in the bottom
 #  ref: Tokizawa M, Kusunoki K, Koyama H, Kurotani A, Sakurai T, Suzuki Y, Kurata T, Yamamoto YY. "Identification of Arabidopsis genic and non-genic promoters by pair-end sequencing of TSS tags". Plant J, 2017.
+#  ref: Sugekawa K, Ezeh OS, Yamamoto YY. "Genetic stability of genic and non-genbic promoters revealed by comparative TSS-seq of Arabidopsis natural variations"
 
 #  argument 1: input file name
 #  input file: output file from TSSClusteringFromMappedData.pl
