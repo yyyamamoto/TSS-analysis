@@ -46,3 +46,18 @@ Used in our recent report: "Genetic stability of genic and non-genic promoters i
 new script uploaded: TSSClusteringFromMappedData_2_prepClusterTable2018.pl
 Apply this to the output file from TSSClusteringFromMappedData_1_2024.pl
 
+How to use  25.8.16
+1
+Prep TSS data like this file: TSSclusteringfromMappedData_inputtest.tab
+memo: Consider Cap-Singature (first G or GG in the TSS tag seq) when mapping TSS tags into genome seq. If the first G of a tag matches with the genome seq, there are two possibilities: the G is artificially added, or it comes from the corresponding genome seq. I recommend to assume the latter situation first, and the assumption would not cause any critical problems for many analyses. If you are trying to analyze minor promoter sections or events, you may recall this matter. See Fig S3 & 4 in Tokizawa et al. Plant J 90: 587, 2017 more detail.
+
+2
+Use TSSClusteringFromMappedData.pl
+There are two arguments as described in the top of the script.
+The second argument is the name of the output file like this:
+TSSclusteringfromMappedData_outputtest.tab
+
+3
+Use TSSClusteringFromMappedData_1_2024
+
+
