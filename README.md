@@ -46,6 +46,7 @@ Used in our recent report: "Genetic stability of genic and non-genic promoters i
 new script uploaded: TSSClusteringFromMappedData_2_prepClusterTable2018.pl
 Apply this to the output file from TSSClusteringFromMappedData_1_2024.pl
 
+
 How to use  25.8.16
 1
 Prep TSS data like this file: TSSclusteringfromMappedData_inputtest.tab
@@ -53,12 +54,14 @@ memo: Consider Cap-Singature (first G or GG in the TSS tag seq) when mapping TSS
 
 2
 Use TSSClusteringFromMappedData_1_2024.pl
-There are two arguments as described in the top of the script.
+There are two arguments as described in the top of the script. "TSSclusteringfromMappedData_inputtest.tab" is a test input file.
 The second argument is the name of the output file like this:
 TSSclusteringfromMappedData_outputtest.tab
 
 3
-Use TSSClusteringFromMappedData_2_2018.pl
-
+Use TSSClusteringFromMappedData_2_prepClusterTable2018.pl
+There are two arguments as described in the top of the script. "TSSclusteringfromMappedData_outputtest.tab" is a test input file.
+The output data is now summerized as TSS clusters, and can be managed using MS-Excel.
+//
 
 
